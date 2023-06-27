@@ -1,0 +1,49 @@
+name: Deploy WordPress Theme
+
+on:
+  push:
+    branches: [master]
+
+env:
+  SSH_USER: ${{ secrets.SSH_USER }}
+  SSH_HOST: ${{ secrets.SSH_HOST }}
+
+jobs:
+  deploy:
+    name: WordPress Theme at Digital Ocean
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+
+      - name: Set SSH Connection
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/deploy.key
+          chmod 600 ~/.ssh/deploy.key
+          cat >>~/.ssh/config <<END
+          Host digitalocean
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/deploy.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Sync theme files
+        run: "rsync --delete -avO
+          --exclude /deploy_key \
+          --exclude /.git/ \
+          --exclude /.github/ \
+          --exclude /assets/node_modules/ \
+          ./ ${{ env.SSH_USER }}@${{ env.SSH_HOST }}:${{ env.DEST }}"
+
+        env:
+          # RSYNC_FLAGS: "" #--dry-run
+          # EXCLUDES: rsync-excludes.txt
+          SSH_HOST: digitalocean
+          THEME_NAME: "your-theme-name"
+          PATH: "/var/www/html"
+          DEST: "$PATH/wp-content/themes/$THEME_NAME"
