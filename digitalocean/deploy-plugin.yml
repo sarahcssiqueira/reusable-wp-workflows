@@ -1,4 +1,4 @@
-name: Deploy WordPress Plugin
+name: Deploy Plugin
 
 on:
   push:
@@ -10,12 +10,12 @@ env:
 
 jobs:
   deploy:
-    name: WordPress Plugin at Digital Ocean
-    runs-on: ubuntu-latest
+    name: Deploy WordPress Plugin on Digital Ocean
+    runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Set SSH Connection
         run: |
@@ -39,11 +39,6 @@ jobs:
           --exclude /.github/ \
           --exclude /assets/node_modules/ \
           ./ ${{ env.SSH_USER }}@${{ env.SSH_HOST }}:${{ env.DEST }}"
-
         env:
-          # RSYNC_FLAGS: "" #--dry-run
-          # EXCLUDES: rsync-excludes.txt
           SSH_HOST: digitalocean
-          PLUGIN_NAME: "your-plugin-name"
-          PATH: "/var/www/html"
-          DEST: "$PATH/wp-content/plugins/$PLUGIN_NAME"
+          DEST: "/var/www/your-domain/wp-content/plugins/plugin-folder"

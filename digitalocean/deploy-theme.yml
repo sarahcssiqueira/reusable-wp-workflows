@@ -1,4 +1,4 @@
-name: Deploy WordPress Theme
+name: Deploy Theme
 
 on:
   push:
@@ -10,12 +10,12 @@ env:
 
 jobs:
   deploy:
-    name: WordPress Theme at Digital Ocean
+    name: Deploy WordPress Theme on Digital Ocean
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Set SSH Connection
         run: |
@@ -39,11 +39,6 @@ jobs:
           --exclude /.github/ \
           --exclude /assets/node_modules/ \
           ./ ${{ env.SSH_USER }}@${{ env.SSH_HOST }}:${{ env.DEST }}"
-
         env:
-          # RSYNC_FLAGS: "" #--dry-run
-          # EXCLUDES: rsync-excludes.txt
           SSH_HOST: digitalocean
-          THEME_NAME: "your-theme-name"
-          PATH: "/var/www/html"
-          DEST: "$PATH/wp-content/themes/$THEME_NAME"
+          DEST: "/var/www/your-domain/wp-content/themes/theme-folder"
