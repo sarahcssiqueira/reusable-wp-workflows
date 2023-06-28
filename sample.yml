@@ -1,4 +1,4 @@
-name: Deploy Plugin
+name: Deploy WorkFlow
 
 on:
   push:
@@ -10,12 +10,27 @@ env:
 
 jobs:
   deploy:
-    name: Deploy WordPress Plugin on Digital Ocean
-    runs-on: ubuntu-20.04
+    name: Deploy on Server
+    # You can customize it to use in a different Linux, Windows or even macOS versions.
+    # Check the list https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Node        
+        uses: actions/setup-node@v2
+         with:
+          node-version: 12.x
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build
+        run: |
+          npm run build
 
       - name: Set SSH Connection
         run: |
@@ -32,7 +47,7 @@ jobs:
         env:
           SSH_KEY: ${{ secrets.DEPLOY_KEY }}
 
-      - name: Sync plugin files
+      - name: Sync theme files
         run: "rsync --delete -avO
           --exclude /deploy_key \
           --exclude /.git/ \
@@ -42,4 +57,4 @@ jobs:
           SSH_HOST: digitalocean
           # That's the most commom path in a WordPress instalation on a LAMP stack,
           # but you can change the destination according to your needs.
-          DEST: "/var/www/your-domain/wp-content/plugins/plugin-folder"
+          DEST: "/var/www/your-domain/wp-content/themes/theme-folder"

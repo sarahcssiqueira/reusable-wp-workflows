@@ -37,8 +37,9 @@ jobs:
           --exclude /deploy_key \
           --exclude /.git/ \
           --exclude /.github/ \
-          --exclude /assets/node_modules/ \
           ./ ${{ env.SSH_USER }}@${{ env.SSH_HOST }}:${{ env.DEST }}"
         env:
           SSH_HOST: digitalocean
+          # That's the most commom path in a WordPress instalation on a LAMP stack,
+          # but you can change the destination according to your needs.
           DEST: "/var/www/your-domain/wp-content/themes/theme-folder"
