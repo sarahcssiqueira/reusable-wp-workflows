@@ -2,13 +2,17 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Reusable WordPress Workflows for linting and automatically deploy themes and/or plugins
+Reusable WordPress Workflows.
 
 ## Check for WordPress Coding Standards
 
-- [Check-Standards](hhttps://github.com/sarahcssiqueira/reusable-wordpress-workflows/tree/master/check-standards)
+For linting
+
+- [Check-Standards](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/tree/master/check-standards)
 
 ## Deployment
+
+For automatically deploy themes and/or plugins
 
 - [Digital Ocean](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/tree/master/digitalocean)
 - [AWS EC2 ](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/tree/master/aws-ec2)
