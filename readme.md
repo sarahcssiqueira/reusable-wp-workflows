@@ -1,22 +1,24 @@
-# WordPress Deploy Workflows
+# Reusable WordPress Workflows
 
-WordPress Workflows samples for automatically deploy themes and/or plugins in known hosts like Digital Ocean and AWS.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Sample
+Reusable WordPress Workflows for linting and automatically deploy themes and/or plugins
 
-A short explanation about each component [Sample](sample.yml)
+## Check for WordPress Coding Standards
 
-## Hosts
+- [Check-Standards](hhttps://github.com/sarahcssiqueira/reusable-wordpress-workflows/tree/master/check-standards)
 
-- [Digital Ocean](https://github.com/sarahcssiqueira/workflows-deploy-wordpress/tree/master/digitalocean)
-- [AWS EC2 ](https://github.com/sarahcssiqueira/workflows-deploy-wordpress/tree/master/aws-ec2)
+## Deployment
+
+- [Digital Ocean](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/tree/master/digitalocean)
+- [AWS EC2 ](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/tree/master/aws-ec2)
 
 ## Usage
 
-Copy and paste the .yml file more suitable for your needs in the .github/worklows folder at the repository you want to deploy. If you still dont have a .github/worklows, create one at the root of the repository.
+Copy and paste the .yml file more suitable for your needs in the .github/worklows folder of your repository. If you still dont have a **.github/worklows** folder, create one at the root of the repository.
 
-Change the paths and [save the secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) at your repository settings.
+Change the paths and [save the secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) if necessary.
 
 # Contributing and Support
 
-It's **work in progress.** Feel free to contribute adding new workflows for other hosts through [pull requests](https://github.com/sarahcssiqueira/workflows-deploy-wordpress/pulls), informing about [issues](https://github.com/sarahcssiqueira/workflows-deploy-wordpress/issues) or even with some improvements ideas.
+It's **work in progress.** Contribute adding new workflows samples for other hosts or other needs through [pull requests](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/pulls), informe about [issues](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/issues) or even with improvements ideas.
