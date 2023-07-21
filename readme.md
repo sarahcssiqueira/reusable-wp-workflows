@@ -8,14 +8,14 @@ Reusable WordPress Workflows.
 
 - [Check-Standards](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/tree/master/check-standards)
 
-## Create Release
-
-- [Create Release](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/blob/master/release/create-release.yml)
-
 ## Deploy
 
 - [Deploy Plugin](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/blob/master/deploy/deploy-plugin.yml)
 - [Deploy Theme](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/blob/master/deploy/deploy-theme.yml)
+
+## Release
+
+- [Automatic Releases on new Tags](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/blob/master/release/create-release.yml)
 
 ## Tests
 
@@ -66,6 +66,6 @@ For more details about setting GitHub environments, please refer to [GitHub docu
 
 Contribute to adding new workflows samples for other needs or other needs through [pull requests](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/pulls), inform about [issues](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/issues) or even add some improvements ideas.
 
-## License
+# License
 
 This repository is licensed under the [MIT](https://opensource.org/license/mit/) license.
