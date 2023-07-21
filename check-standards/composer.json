@@ -1,10 +1,5 @@
 {
-  "name": "sarah/check-standards",
-  "autoload": {
-    "psr-4": {
-      "Checkstandards\\": "src/"
-    }
-  },
+  "name": "sarahcssiqueira/check-standards",
   "scripts": {
     "cstd": "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
     "cs": "./vendor/bin/phpcs --standard=.phpcs.xml --report=summary .",
