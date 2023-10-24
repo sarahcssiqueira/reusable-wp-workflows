@@ -1,10 +1,10 @@
 # Reusable WordPress Workflows
 
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Support Level](https://img.shields.io/badge/support-may_take_time-yellow.svg)](#support-level)
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-Reusable WordPress Workflows.
+Reusable WordPress Workflows to increase our productivity instead of deploying in the "cowboy" style through FTP.
 
 ## Check for WordPress Coding Standards
 
