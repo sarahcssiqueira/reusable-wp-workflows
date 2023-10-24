@@ -10,8 +10,9 @@ Reusable WordPress Workflows.
 
 ## Deploy
 
-- [Deploy Plugin](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/blob/master/deploy/deploy-plugin.yml)
-- [Deploy Theme](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/blob/master/deploy/deploy-theme.yml)
+- [Deploy Plugin in a LAMP server](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/blob/master/deploy/deploy-plugin.yml)
+- [Deploy Theme in a LAMP server](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/blob/master/deploy/deploy-theme.yml)
+- [Deploy Theme in a EC2 instance](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/blob/master/deploy/deploy-theme-aws.yml)
 
 ## Release
 
@@ -37,7 +38,7 @@ on:
     branches: [master]
 ```
 
-But as you can see, for the create release workflow, it is triggered when a tag is added to the branch.
+But as you can see, for the create [release workflow](https://github.com/sarahcssiqueira/reusable-wordpress-workflows/blob/master/release/create-release.yml), it is triggered when a tag is added to the branch.
 
 ```
 on:
